@@ -54,7 +54,7 @@ module OmniAuth
       end
 
       def callback_url
-        options[:callback_url] || (full_host + script_name + callback_path)
+        request.params['callback_url'] || options[:callback_url] || (full_host + script_name + callback_path)
       end
 
       def authorize_params
